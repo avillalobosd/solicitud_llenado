@@ -1,0 +1,183 @@
+<html>
+
+<head>
+	<!-- <script src="jquery-2.1.4.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+	</script>
+	<script src="imagenSolicitud.js"></script>
+	<script src="jspdf.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+	<div id="wrapper">
+		<!-- INFORMACION PERSONAL -->
+		DEPENDENCIA
+		<input type="text" id="dependencia" value="FOVILEON" placeholder="Dependencia"><br>
+		NOMBRE COMPLETO
+		<input type="text" id="nombre" value="Abelardo Villalobos" placeholder="Nombre Completo" /><br>
+		NO EMPLEADO
+		<input type="text" id="no_emp" value="Fl0021" placeholder="No Empleado" /><br>
+		MONTO
+		<input type="text" id="monto" value="50000" placeholder="MONTO" /><br>
+		TELEFONO
+		<input type="text" id="telefonoSolicitante" value="83003570" placeholder="Telefono" /><br>
+		CELULAR
+		<input type="text" id="celularSolicitante" value="8116360604" placeholder="Celular" /><br>
+		EMAIL
+		<input type="text" id="emailSolicitante" value="lalovide@gmail.com" placeholder="Email" /><br>
+		<br>
+		<!-- informacion del jefe -->
+		CELULAR JEFE
+		<input type="text" id="nombreJefe" value="Jesús Ortiz" placeholder="Celular" /><br>
+		NOMBRE JEFE
+		<input type="text" id="fechaIngreso" value="01/01/2020" placeholder="Fecha Ingreso" /><br>
+
+		<br>
+		<!-- Domicilio -->
+		CALLE NUMERO
+		<input type="text" id="calleSolicitante" value="Marco Tulio 604" placeholder="Calle y Numero" /><br>
+		COLONIA
+		<input type="text" id="coloniaSolicitante" value="Cumbres 3er Sector" placeholder="Colonia" /><br>
+		MUNICIPIO
+		<input type="text" id="municipioSolicitante" value="Monterrey" placeholder="Municipio" /><br>
+		<input type="button" id="button" value="Submit" />
+		<br>
+		<h1>AVAL</h1>
+			<!-- AVAL  -->
+		DEPENDENCIA AVAL
+		<input type="text" id="dependenciaAval" value="FOVILEON" placeholder="Dependencia"><br>
+		NOMBRE
+		<input type="text" id="nombreAval" value="Victor Lopez" placeholder="Nombre Completo" /><br>
+		NO EMPLEADO 
+		<input type="text" id="no_empAval" value="Fl0013" placeholder="No Empleado" /><br>
+		TELEFONO
+		<input type="text" id="telefonoAval" value="8112523" placeholder="Telefono" /><br>
+		CELULAR
+		<input type="text" id="celularAval" value="81252222" placeholder="Celular" /><br>
+		EMAIL
+		<input type="text" id="emailAval" value="vmle@gmail.com" placeholder="Email" /><br>
+		CALLE NUMERO
+		<input type="text" id="calleAval" value="Okiroki 800" placeholder="Calle y Numero" /><br>
+		COLONIA
+		<input type="text" id="coloniaAval" value="Mitras" placeholder="Colonia" /><br>
+		MUNICIPIO
+		<input type="text" id="municipioAval" value="Santa Catarina" placeholder="Municipio" /><br>
+		FECHA INGRESO
+		<input type="text" id="fechaIngresoAval" value="01/01/2020" placeholder="Fecha Ingreso" /><br>
+
+		<br><br>
+		DIA
+		<input type="text" id="dia" value="31" placeholder="Colonia" /><br>
+		MES
+		<input type="text" id="mes" value="12" placeholder="Municipio" /><br>
+		FECHA INGRESO
+		<input type="text" id="anio" value="2020" placeholder="Fecha Ingreso" /><br>
+
+
+		<script>
+			$('#button').click(function () {
+				// console.log(imgData)
+
+				var doc = new jsPDF();
+
+
+				doc.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+
+				var dependencia = $('#dependencia').val();
+				var nombre = $('#nombre').val();
+				var no_emp = $('#no_emp').val();
+				var monto = $('#monto').val();
+				var telefonoSolicitante = $('#telefonoSolicitante').val();
+				var celularSolicitante = $('#celularSolicitante').val();
+				var emailSolicitante = $('#emailSolicitante').val();
+				var nombreJefe = $('#nombreJefe').val();
+				var fechaIngreso = $('#fechaIngreso').val();
+				var calleSolicitante = $('#calleSolicitante').val();
+				var coloniaSolicitante = $('#coloniaSolicitante').val();
+				var municipioSolicitante = $('#municipioSolicitante').val();
+
+				
+				var dependenciaAval = $('#dependenciaAval').val();
+				var nombreAval = $('#nombreAval').val();
+				var no_empAval = $('#no_empAval').val();
+				var telefonoAval = $('#telefonoAval').val();
+				var celularAval = $('#celularAval').val();
+				var emailAval = $('#emailAval').val();
+				var calleAval = $('#calleAval').val();
+				var coloniaAval = $('#coloniaAval').val();
+				var municipioAval = $('#municipioAval').val();
+				var fechaIngresoAval = $('#fechaIngresoAval').val();
+
+				var dia = $('#dia').val();
+				var mes = $('#mes').val();
+				var anio = $('#anio').val();
+
+
+				// solicitante 
+				doc.setFontSize(10);
+				doc.setTextColor(92, 76, 76);
+				doc.text(6, 55, dependencia); //listo
+				doc.text(6, 67, nombre); //listo
+				doc.text(170, 55, monto); //listo
+				doc.text(140, 67, no_emp); //listo
+				doc.setFontSize(8);
+				doc.text(170, 62, telefonoSolicitante); //listo
+				doc.text(170, 68, celularSolicitante); //listo
+				doc.text(167, 89, emailSolicitante); //listo
+				doc.setFontSize(10);
+				doc.text(6, 89, nombreJefe); //listo
+				doc.text(123, 89, fechaIngreso); //listo
+				doc.text(6, 77, calleSolicitante); //listo
+				doc.text(110, 77, coloniaSolicitante); //listo
+				doc.text(170, 77, municipioSolicitante); //listo
+
+				// AVAL 
+				doc.text(6, 153, nombreAval); //listo
+				doc.text(123, 153, no_empAval); //listo
+				doc.setFontSize(8);
+				doc.text(170, 148, telefonoAval); //listo
+				doc.text(170, 154, celularSolicitante); //listo
+				doc.text(167, 175, emailAval); //listo
+				doc.setFontSize(10);
+				doc.text(6, 163, calleAval); //listo
+				doc.text(110, 163, coloniaAval); //listo
+				doc.text(170, 163, municipioAval); //listo
+				doc.text(6, 175, dependenciaAval); //listo
+				doc.text(123, 175, fechaIngresoAval); //listo
+
+				// ABAJO 
+				doc.text(6, 233, nombre); //listo
+				doc.text(110, 233, nombreAval); //listo
+				doc.setFontSize(8);
+				doc.text(6, 243, calleSolicitante); //listo
+				doc.text(6, 246, coloniaSolicitante); //listo
+				doc.text(6, 249, municipioSolicitante); //listo
+				doc.text(110, 243, calleAval); //listo
+				doc.text(110, 246, coloniaAval); //listo
+				doc.text(110, 249, municipioAval); //listo
+
+
+				// FECHA
+				doc.text(75, 108, dia); //listo
+				doc.text(111, 108, mes); //listo
+				doc.text(140, 108, anio); //listo
+
+
+
+
+				// doc.save('test.pdf');
+				window.open(URL.createObjectURL(doc.output("blob")))
+
+			});
+		</script>
+</body>
+
+</html>
